@@ -196,7 +196,7 @@ $(document).ready(function(){
      **驗證
      **/
     verifyBtn.on("click",function(){
-
+       
         $("#result").empty();
 
         //天數
@@ -265,14 +265,10 @@ $(document).ready(function(){
         rbtnInfo.relage = relAge;//實際年齡
         rbtnInfo.startdt = txt_tr_effdt.val()//投保始期(民國年月日)
 
-        serviceCenterService.selectRbtn({rbtnData: JSON.stringify(rbtnInfo)}, function (data) {
-            if (data.success) {
-                var premium = data.data;
-                $("#result").append($("<h4></h4>").css('margin-top','2em')
-                 .append($("<span>總保費:</span>").css({'color':'red','float':'left'})
-                 .text('總保費:' + premium + '元/每人')));
-            }
-        })
+        //計算保費    
+        var premium = logic(rbtnInfo);
+        $("#result").append($("<h4></h4>").css('margin-top','2em')
+        .append($("<span>總保費:</span>").css({'color':'red','float':'left'})
+        .text('總保費:' + premium + '元/每人')));
     }
-
 });
