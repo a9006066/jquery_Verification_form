@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/main.css">
+    <title>驗證表單</title>
+  </head>
+  <body>
+      <div class="section_cont" style="background-color: white">
+        <div class="row" id="main">
+            <h1>旅平險費率試算</h1>
+          <!--form_start-->
+          <div class="col-md-9">
+            <h4>
+              <span style="color:red;">* 商品試算資料僅供參考，詳細請參閱保單內容及保單條款</span>
+            </h4>
+            <table class="table table-hover table-bordered">
+              <tbody>
+                <tr>
+                  <td>&nbsp;</td>
+                </tr>
+                <!--個人件/團體件-->
+                <tr>
+                  <td>
+                    <label for="rbtnPG_0">個人件</label>
+                    <input name="rbtnPG" id="rbtnPG_0" type="radio" value="AD" checked="checked"/>&nbsp;
+                    <label for="rbtnPG_1">團體件</label>
+                    <input name="rbtnPG" id="rbtnPG_1" type="radio" value="AG"/>
+                  </td>
+                </tr>
+                <!--天數-->
+                <tr>
+                  <td>
+                    <label for="txbDays">天數:</label>
+                    <input type="text" id="txbDays" name="txbDays" maxlength="3" autocomplete="off"/> 日
+                    <span style="color: red"> (請輸入1~180)</span>
+                    <span id="txbDays_right"></span>
+                    <span id="txbDays_error"></span>
+                  </td>
+                </tr>
+                <!--保險費-->
+                <tr>
+                  <td>
+                    <label for="txtMoney">保險金額:</label>
+                    <input type="text" name="txtMoney" id="txtMoney" autocomplete="off"/>萬元/每人
+                    <span id="txtMoney_right"></span>
+                    <span id="txtMoney_error"></span>
+                  </td>
+                </tr>
+                <!--被保險人生日-->
+                <tr>
+                  <td>
+                    <label for="txt_tr_birdt">被保人生日:</label>
+                    <input type="text" id="txt_tr_birdt" name="txt_tr_birdt" class="Wdate" maxlength="7" onFocus="WdatePicker({lang:'zh-tw',dateFmt:'yyyMMdd',maxDate:'%y-%M-{%d-1}'})" autocomplete="off"/> 
+                    <span id="birdt_error"></span>
+                    <span id="birdt_right"></span>
+                  </td>
+                </tr>
+                <!--生效日期-->
+                <tr>
+                  <td>
+                    <label for="txt_tr_effdt">生效日期:</label>
+                    <input type="text" id="txt_tr_effdt" name="txt_tr_effdt" class="Wdate" maxlength="7"  onFocus="WdatePicker({lang:'zh-tw',dateFmt:'yyyMMdd',minDate:'%y-%M-%d'})"  autocomplete="off"/>
+                    <span id="effdt_error"></span>
+                    <span id="effdt_right"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                </tr>
+                <!--附加醫療項目-->
+                <tr>
+                  <td>
+                    <label>附加醫療項目:</label>
+                    <span id="rbtnAbbpol_right"></span>
+                    <span id="rbtnAbbpol_error"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input id="rbtnAbbpol_0" type="radio" name="rbtnAbbpol" value="0" checked="checked"/>
+                    <label for="rbtnAbbpol_0">無</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input id="rbtnAbbpol_1" type="radio" name="rbtnAbbpol" value="1"/>
+                    <label for="rbtnAbbpol_1">5%【傷害醫療】</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input id="rbtnAbbpol_2" type="radio" name="rbtnAbbpol" value="2"/>
+                    <label for="rbtnAbbpol_2">10%【傷害醫療】</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input id="rbtnAbbpol_3" type="radio" name="rbtnAbbpol" value="3"/>
+                    <label for="rbtnAbbpol_3">5%【傷害醫療+海外疾病住院醫療(限國外)】</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input id="rbtnAbbpol_4" type="radio" name="rbtnAbbpol" value="4"/>
+                    <label for="rbtnAbbpol_4">10%【傷害醫療+海外疾病住院醫療(限國外)】</label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!--form_end-->
+          </div>
+          <!--button_start-->
+          <div id="resultBtn" class="col-md-3">
+            <button id="submit" class="btn btn-primary">計算</button>
+            <div id="result"></div>
+          </div>
+          <!--button_end-->
+        </div>
+      </div>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/My97DatePicker/WdatePicker.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
