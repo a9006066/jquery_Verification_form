@@ -173,24 +173,6 @@ function getAdbpm (){
   } //傷害醫療+海外疾病住院醫療(3=5%,4=10%) end
 
 
-   //無
-
-  // var adbpmTemp = datas.filter((_item)=>{
-  //   return _item.TADAY === parDays && (((parPG === 'AE'|| parPG === 'AF') && _item.TACODE ==='MS')
-  //   || ((parPG === 'AJ'|| parPG === 'AK') && _item.TACODE ==='MF')) && _item.bsf === parMoney*v ;
-  // }) ;
-
-
-
-
-
-
-
 }//getAdbpmend
-
-
-
-
-
 
 };//logic end
