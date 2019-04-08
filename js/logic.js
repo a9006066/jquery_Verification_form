@@ -65,7 +65,7 @@ function logic(rbtnInfo) {
   var startdd = turnStarTdd(rbtnInfo.startdt); //投保始期西元年
   var enddt = turnEnddt(rbtnInfo.startdt,parDays); //投保結束日
   var age = rbtnInfo.relage; //實際年齡
-  var fullage = borndtt;//滿15歲的年月日 borndtt + 150000
+  var fullage = rbtnInfo.borndtt;//滿15歲的年月日 borndtt + 150000
   var vfullage = fullage;
   var parPG = changePG(age,rbtnInfo.parPG); //險種
   var parAddPol = rbtnInfo.parAddPol;//附加傷害醫療
