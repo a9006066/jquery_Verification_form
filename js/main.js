@@ -175,7 +175,7 @@ $(document).ready(function(){
         } else {
             $("#txtMoney_error").text('');
             $("#txtMoney_right").text('✔').attr('class','elem_color_green');
-            boolen = true;
+            return true;
         }
 
     }
