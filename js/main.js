@@ -128,8 +128,6 @@ $(document).ready(function(){
      **/
     var txtMoneyVerify = function (relage, polage) {
 
-        var boolen = false;
-
         var range = [];
 
         rbtnPG_Val = $("input:radio:checked[name=rbtnPG]").val();
@@ -167,20 +165,18 @@ $(document).ready(function(){
         if ((bsf % 10) != 0) {
             $("#txtMoney_error").text('【保險金額】請以10萬元為級距單位!!').attr('class','elem_color_red');
             $("#txtMoney_right").text('').attr('class","elem_color_white');
-            boolen = false;
+            return false;
         }
 
         if (bsf < range[0] || bsf > range[1]) {
             $("#txtMoney_error").text('【保險金額】有誤，【' + rbtnPG_Name + '】保險金額須介於' + range[0] + '萬~' + range[1] + '萬之間!').attr('class', 'elem_color_red');
             $("#txtMoney_right").text('').attr('class','elem_color_white');
-            boolen = false;
+            return false;
         } else {
             $("#txtMoney_error").text('');
             $("#txtMoney_right").text('✔').attr('class','elem_color_green');
             boolen = true;
         }
-
-        return boolen;
 
     }
 
